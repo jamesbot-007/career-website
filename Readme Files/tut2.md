@@ -6,5 +6,6 @@
 - so, as we do some devlopment locally and then we push to github same way here, We have git (version control tab) in tools section of Explorer
 
 - stage the files and commit
+- click on "sync with remote"
 
 - go back to github and reload the page
