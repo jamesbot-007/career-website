@@ -51,19 +51,26 @@ basically the home page of MKcoder.com
 then we define a function below the decorator. By adding this we're saying to the flask when the url "/" accessed then show "hello world"
 
 - Once we run it we see nothing will happen. Because they(flask docs) expected to run a flask app in slightly different way
-- https://flask.palletsprojects.com/en/3.0.x/quickstart/
+- https://flask.palletsprojects.com/en/2.1.x/quickstart/
+
+also you should know how the how the set command works in windows 
+https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/set_1
+
 
 we can run the app.py using flask run command 
 
 ```powershell
-> flask --app file_name run
+> set FLASK_APP=hello
+> flask run
 ```
 <br/>  <!-- Adding a <br/> tag for emopty line -->
 
 In our case that is like,
-```powershell
-> flask --app app run
+```Linux
+$ flask --app app run
 ``` 
+where app  is filename
+for main.py it will be like : flask --app main run
 - This will start running a flask app on port 5000
 
 so, what we need to do go inside the .replit file and change the "run" command because flask expects to be run in different way.
