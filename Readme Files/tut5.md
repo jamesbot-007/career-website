@@ -44,3 +44,86 @@ The sote looks ugly,It doesn't really look that great. so far we have seen rende
 - if the paragraph is expanded takes full width then, it is hard to read so, we'll reduce weidth also text-align:center
 
 We can use a Framework for faster devlopment. Instead of writting CSS manually for every website we build we can use pre existing set fo styles that have been created by good designers because we may not have good design skills and we can apply those css by specifing classes.
+
+--> commit changes and remove all styles, class, id from the file make it simple pure HTML.
+
+## Bootstrap
+Search for getbootstrap.com
+Right now we just include the CSS CDN
+
+CDN is link within the \<link\> tag.It is way to add a link to some other resource on the internet inside the html page
+
+If we just add the CSS CDN then all the default styles will apply to the html. That is little bit nice styles. It makes page pretty good.
+
+let's use bootstrap by adding classes to the tags.
+see layouts->container, and also we can search for anything we want margin, image, text center etc...
+
+## Dynamic Data on Webpage.
+It is not a good thing to list all the jobs in directly Html file, because every time we want to add a job we will have to go in html file and change something that thing we also need to do when we want to remove job, Making changes inside an Html file can be tricky.
+Often we done like, Data is stored somewhere else in database where admin can directly create jobs and, information fetch from the database and entered into html and display to the screen.
+
+we will not create database but, we'll do something similar to that.
+we create a python list job who stores inforamtion related to jobs
+
+after creating job some how we need to send that information in home.html. The way to do it is by providing arguments to render template.
+
+come back to home2.html their we will use some special syntax that is not html,python it is the syntax of jinja2 template engine. It is the way to insert dynamic data into html.
+
+That's we can add dynamically data to the html. that's why these are called template these are not shown always be in same way because if it is like that then we need to create a buch of file for every page that you want to showw. The templates were using certain information using this {{}} tags
+
+the troble is we don't want to show the data in dictionary format we want a readble format as we see in 
+https://excalidraw.com/#json=rGB215Ka1I0dbWhLxaJKn,xCinmKb3TucX4FQk9ht72w
+
+solution :-
+Template support some special syntax as well. we actually use a for loop inside {{}} template .
+
+visit the home2.html then home3.html
+
+We can add limited amount of content inside \<p\> tag if the content is coming by using template engine.
+that's why we generally uses a \<div\> tag to  put content inside it.
+
+if there is no salary for certain job then how can we handle it ? 
+Just like "for" we have "if".
+After adding if-statement in html(jinja template). if no-salary then it doesn't show salary.
+In this type of case, we must handle the error using the if-statement otherwise the template engine will do some unexpected thing.
+
+
+
+Another thing,
+If we want to show the job details on ther page also then "cut" everything  inside the for create a new layout(html document) inside the 'templates' folder. 
+- job_item.html
+Put all the code of "for" block in job_item.html
+
+Then comeback to the "home3.html" and instead of having all those code we use include the template using the template engine
+
+
+```python
+{% for job in jobs %}
+  {% include "job_item.html"%}
+{% endfor %}
+```
+By this code what we're telling flask is,
+- inside the for-loop each time with the different value of "job" include the template job_item.html and pass the variable that are availaibale to the variable "job" so that they can be accessible inside the job_item.html template
+- This how we can reuse a template, extract reuseable components out of the templates and render nice template.
+
+
+
+Let's add border-bottom and Apply button
+- for button we create "columns" using bootstrap. 1st column have job list and 2nd have Apply button
+- We can make one big column and another will be small.  b.d. we have 12 columns in a row
+
+```html
+<div class="row">
+  <div clas="col-9"></div>
+  <div clas="col-3"></div>
+</div>
+```
+12 column in each row. 9 col have by first div and 3 have by second one.
+if set the column, beyond 12 then elements will be come in next line 
+
+
+
+---> That is one way to return the dynamic data, one other way some website allow you to access some dynamic data is using an API.
+
+## Dynamic data with API
+instead of retuning html we can return JSON. -- JavaScript Object Notation

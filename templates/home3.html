@@ -26,58 +26,38 @@
     td,th{
       border : 2px solid;
     }
-    
-  
+
+
   </style>
-  
+
 </head>
 <body>
     <div class="container">
       <!-- <h1 class="text-center mt-4 mb-4">Carrer Websire</h1> -->
       <h1 class="text-center mt-4 mb-4">{{websiteName}}</h1>
-    
+
       <img id="banner" class="img-fluid" src="{{ url_for('static', filename='banner.jpg') }}" />
       <h2 class="text-center mt-2 mb-4">About Jovian</h2>
       <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra magna ac placerat vestibulum lectus mauris ultrices. Ullamcorper morbi tincidunt ornare massa eget. Tellus at urna condimentum mattis pellentesque id nibh. Lectus arcu bibendum at varius vel pharetra vel turpis nunc. Risus pretium quam vulputate dignissim suspendisse in est ante in. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Duis convallis convallis tellus id interdum. Erat imperdiet sed euismod nisi porta lorem. Fringilla urna porttitor rhoncus dolor purus non. Convallis aenean et tortor at risus viverra adipiscing. Massa massa ultricies mi quis hendrerit.
-    
+
       Id porta nibh venenatis cras sed felis eget velit. Consequat mauris nunc congue nisi vitae suscipit tellus mauris. Id diam vel quam elementum pulvinar etiam non quam lacus. Imperdiet sed euismod nisi porta lorem. Viverra maecenas accumsan lacus vel. Euismod nisi porta lorem mollis aliquam ut porttitor leo a. Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Quam elementum pulvinar etiam non. Etiam erat velit scelerisque in dictum non. Porttitor rhoncus dolor purus non enim praesent elementum. Ac ut consequat semper viverra nam libero justo laoreet. Magna eget est lorem ipsum dolor. Tincidunt lobortis feugiat vivamus at.
-    
+
       Tellus in metus vulputate eu scelerisque. Dignissim sodales ut eu sem. Venenatis urna cursus eget nunc scelerisque viverra. Pharetra et ultrices neque ornare aenean euismod elementum nisi. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Id leo in vitae turpis massa sed elementum tempus egestas. Sit amet justo donec enim diam vulputate ut pharetra. Ultrices sagittis orci a scelerisque purus semper. Ipsum dolor sit amet consectetur adipiscing. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus. Vitae congue eu consequat ac. Vulputate ut pharetra sit amet.</p>
-    
-      
+
+
       <h2 class="text-center mt-2 mb-4" >Open positions</h2>
-      <p>
-        {{jobs}}
-      </p>
-      <p>
+
+      <!-- see the changes -->
+      <div>
         {% for job in jobs %}
-        <div>{{job['title']}}</div>
-        {%endfor%}
-      </p>
-<!-- or we can create like this also -->
+          {% include "job_item.html"%}
+        <!-- for that job_item.html must present in "templates" directiory 
+        This way we can access same thing in multiple files and that thig will come / change dynamically -->
+        {% endfor %}
+      </div>
+     
 
-      <table class=" mb-4">
-        <thead>
-          <tr>
-              <th>Id</th>
-              <th>Title</th>
-              <th>Location</th>
-              <th>Salary</th>
-          </tr>
-        </thead>
-        <tbody>
-      {% for job in jobs %}
-          <tr>
-            <td>{{job['id']}}</td>
-            <td>{{job['title']}}</td>
-            <td>{{job['location']}}</td>
-            <td>{{job['salary']}}</td>
-          </tr><br/>
-      {%endfor%}
-        </tbody>
-      </table>
 
-      
       <div class="text-center">
         <button>Contact us</button>
         <p class="mt-4">Copyright 2022, Jovian</p>
