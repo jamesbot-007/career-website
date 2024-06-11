@@ -156,4 +156,38 @@ It is already deployed in some sense it is on replit.
 When you want to put it on production, you'll have to figure some cloud platform where you oing to deploy this.
 one cloud platform that makes very easy to deploy python applications is render.com there are other cloud platfrom like AWS, heroku, Google cloud, asure etc... but render is very easy to work.
 
-- Commit and push all the changes 
+- Commit and push all the changes all the information sended back to github.
+so we don't need to depend on replit
+take the repository and go to https://render.com
+create a free account
+
+After creating an account it shows an dashboard 
+new -> web services which means we're not just sending html normally. we're may also connecting to a database and getting some dynamic data, may be we have some api route something like that. 
+
+new -> static site. It is just and html page you want to deploy no flask.
+
+we'll create a web service. 
+
+then github connect account this way we allow render.com to to pull your code. connect to github. 
+
+---
+# MK : i fork the website from the main account to 007 account also on that account i started deploying
+---
+
+give access to only the  "career-website" repository, back to web services page. reposisotry is connected click on connect.
+
+configure the code :-
+take the code which is on github and deploy it on the cloud using render we need to configure it.
+
+first give name. for internal reference  : (career-website)
+
+buld commad .
+
+At startin we install flask. render.com doesn't know it need to install flask for render.com what we need to do. 
+create a special file called "requirements.txt". It is standard file in python ecosystem. it doesn't actully needed by render.com. This file says in python project which all libararies it requires. it's a convention by devlopers to put that infromation in requirements.txt file.
+
+add 'Flask' and 'gunicorn' library in requirement.txt
+
+gunicorn is production server for python. remember for flask when we ran, it say that it is a devlopment server don't use it for production. so, when we want to put a flask app in production we need to use gunicorn library. It is  easy to use and exact same command every time.
+
+commit changes
