@@ -200,3 +200,45 @@ so, when render.com pull the code it's going to recieve requirement.txt and then
 ```powershell
 pip install -r requirements.txt
 ```
+
+We're just telling the pip using this command. look into the requirements.txt. and each line the name of library and please install the library for me.
+
+
+When render pulls the code from the github everytime somthing chnages in repository render pulls the code and it's going to run "pip install -r requirements.txt" command..
+
+To start server we're now going to use gunicorn. When gunicorn library is installed it also add commands for gunicorn this command needs to give the name of file that needs to be executed i.e. app.py. 
+so, instead of doing "python app.py" we are running "gunicorn app.py"
+
+python : for devlopment 
+gunicorn : for production
+
+so, "gunicorn app" instead of app.py we just only put "app" then not that we also need to specify the variable name which contains the flask application that we want to run app=Flask(\_\_name\_\_) so the command will be like "gunicorn app:app"
+
+## Q. How can we find waht is "bulid command" and what is the "start command" ? 
+Ans. search on google for "render.com deploy flask application". This is something that never learn by someone from it's birth. we can look it just few hours before deploying. It literally tells a example hello_world project.
+That's literally from where we can learn all the things.
+
+we need to learn this type of things specifically. we just need learn it when we need to connect with a specific platfrom. we need to look how to do it. that is often in the documentation.
+
+if we're deploying on platform like heroku then this wil be slightly different. for another platform it's slightly different. all that matters is figure out how to make it work.
+
+put all that information and select the paln(free paln). click on create web service
+It's bulding....
+It takes time don't worry about it. just because it's free. if we have paid plan then it deploy faster
+
+
+## After deploy
+when it deployed it shows ✔️Live
+It provides an url. Once it is setup on the server and that server is poinsted to that url we'll able to access it. 
+How is going to be run the actual server it's gonna be run the actual server using "gunicon app2:app".
+
+copy the url and open in new tab
+and that's it that is our website deployed on render.com
+
+But url still looks ugly. we'll talk about later 
+
+Before that goto app2.py change the salary of backend engineer
+commit changes and push 
+# MK : sync 007 account to main account 
+
+goto deployed site 
