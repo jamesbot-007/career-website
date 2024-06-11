@@ -191,3 +191,12 @@ add 'Flask' and 'gunicorn' library in requirement.txt
 gunicorn is production server for python. remember for flask when we ran, it say that it is a devlopment server don't use it for production. so, when we want to put a flask app in production we need to use gunicorn library. It is  easy to use and exact same command every time.
 
 commit changes
+
+---
+# Mk : resync the 007 account with main account
+--- 
+
+so, when render.com pull the code it's going to recieve requirement.txt and then it's going to run the bulit command
+```powershell
+pip install -r requirements.txt
+```
