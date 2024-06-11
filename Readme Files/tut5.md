@@ -127,3 +127,33 @@ if set the column, beyond 12 then elements will be come in next line
 
 ## Dynamic data with API
 instead of retuning html we can return JSON. -- JavaScript Object Notation
+
+first we need to register this at route. 
+- create route "/jobs"
+- convert the jobs(i.e. list of dictionaries) --> JSON. For that we have a function jsonify it takes an object and convert into JSON  But for that we need to "from flask import json"
+
+after that add an "/jobs" route run the server visit the /jobs and it will give the JSON data. when people say REST API, JSON API or API endpoint this what they mean The webserver returning some information not just as html, but in form of JSON. You can do whatever you want with the data.
+Here the home page(html) shows that same JSON data in different format. The benifit of it is in JSON format data is, we can programically extract information. Analyze the data or modufy the data do whatever we want which we can not do if the data is present is only in html.
+
+We need to convert it html-->JSON and it takes lots of time and effort.
+
+#### Difference
+render_template()    : creating an html endpoint<br/>
+jsonify()            : creating an JSON endpoint
+
+Often, just to differenciate the html page and non-html pages. we often tend to put /api in front of it and it becomes "/api/jobs".
+API stands for Application Programming Interface. But what it really means just a url which doesn't return html to be shown in browser but it return some structured data in form of JSON, Which can then be programmatically analyzed
+
+now, We created our first API route. 
+
+Right now the information stored in "Jobs" variable. But it could be ver well be coming from a database. 
+Enough bulding 
+Let's Deploy the website on cloud.
+
+
+## Deploy
+It is already deployed in some sense it is on replit.
+When you want to put it on production, you'll have to figure some cloud platform where you oing to deploy this.
+one cloud platform that makes very easy to deploy python applications is render.com there are other cloud platfrom like AWS, heroku, Google cloud, asure etc... but render is very easy to work.
+
+- Commit and push all the changes 
