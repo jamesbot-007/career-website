@@ -231,6 +231,7 @@ It takes time don't worry about it. just because it's free. if we have paid plan
 when it deployed it shows ✔️Live
 It provides an url. Once it is setup on the server and that server is poinsted to that url we'll able to access it. 
 How is going to be run the actual server it's gonna be run the actual server using "gunicon app2:app".
+It's gonna show some logs related deployment.
 
 copy the url and open in new tab
 and that's it that is our website deployed on render.com
@@ -241,4 +242,32 @@ Before that goto app2.py change the salary of backend engineer
 commit changes and push 
 # MK : sync 007 account to main account 
 
-goto deployed site 
+
+goto dashboard in that event section you can see it started a new deployment 
+everytime you push to the main branch render.com will automatically take that and try to automatically deploy it.
+
+If the deploy fails it continue to use previous depoly 
+if succeeded then site were get replaced 
+
+suppose for some reason the auto-deployment will not triggered then we can click on manual deploy and deploy latest commit and that is going to take the latest code and that is going to deploy it 
+
+So, This way you can just work on replit and test your changes on the test serrver then use version control to push the changes to github and render will detect those changes and automatically deploy it.
+
+We have seen the automated deployment each time after making some changes 
+
+
+## Let's learn how to change the Domain name
+This part is not free 
+you need to buy a domain
+
+go to domains.google.com and search a domain name and it will show the price 
+
+once we buy after that we need to configure it, to render.com to show our website when anyone search for that domain.
+for that goto dashboard site in render.com. It has a place custom domains Their we can add our bought domain name. 
+
+Then you need to uodate DNS record, Don't worry about what it is. just follow some set of instructions.
+Go to Google Domains Dashboard, create a record "CNAME" save , create 'ANAME' or 'ALIAS'  or 'A' record.
+
+we bought the server and we configure DNS(Domain Name Services) which means if somebody tring to acess the domain which location they actually going to. Domain is redirection to some actual location.
+
+That's it work is Done. Everytime we push change in github render will pickup the latest version then deploy.  
